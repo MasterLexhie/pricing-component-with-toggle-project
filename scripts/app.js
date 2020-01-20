@@ -1,17 +1,17 @@
 const TOGGLE = document.querySelector("#toggle");
-const ANNUALLY = document.querySelector(".annual-price");
-const MONTHLY = document.querySelector(".monthly-price");
-
-const hideAnnualPrice = (ANNUALLY.classList.toggle("hide"));
-const hideMonthlyPrice = (MONTHLY.classList.toggle("hide"));
-
-// console.log({ ANNUALLY });
-
-// const annual =
-// const month =
+const ANNUALLY = document.querySelectorAll(".annual-price");
+const MONTHLY = document.querySelectorAll(".monthly-price");
 
 const toggleOptions = () => {
- return TOGGLE ? 
+  ANNUALLY.forEach(element => {
+    const hideAnnualPrice = element.classList;
+    return TOGGLE ? hideAnnualPrice.toggle("hide") : "";
+  });
+
+  MONTHLY.forEach(element => {
+    const hideAnnualPrice = element.classList;
+    return TOGGLE ? hideAnnualPrice.toggle("hide") : "";
+  });
 };
 
-// TOGGLE.addEventListener("onchange", toggleOptions());
+// TOGGLE.addEventListener("keypress", toggleOptions());
