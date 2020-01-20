@@ -22,12 +22,14 @@
         <div class="title">
           <h1>Our Pricing</h1>
           <div class="pricing-toggle flex">
-            <h3>jbnijsd</h3>
+            <h3>Annually</h3>
+            <!-- <label class="labelTitle" for="Annually">Annually</label> -->
             <label class="switch">
-              <input type="checkbox" />
+              <input type="checkbox" id="toggle" onchange="toggleOptions()" />
               <span class="slider round"></span>
             </label>
-            <h3>jbnijsd</h3>
+            <!-- <label class="labelTitle" for="Annually">Monthly</label> -->
+            <h3>Monthly</h3>
           </div>
         </div>
       </header>
@@ -39,7 +41,7 @@
                 Basic
               </h4>
               <div class="price">
-                <h1 class="price-value monthly-price">
+                <h1 class="price-value monthly-price hide">
                   <span class="currency-symbol">&dollar;</span>19.99
                 </h1>
                 <h1 class="price-value annual-price">
@@ -129,38 +131,6 @@
         </div>
       </section>
     </main>
-
-    <!-- Our Pricing
-  Annually
-  Monthly
-
-  Basic
-  &dollar;19.99
-  &dollar;199.99
-  500 GB Storage
-  2 Users Allowed
-  Send up to 3 GB
-  Learn More
-
-  Professional
-  &dollar;24.99
-  &dollar;249.99
-  1 TB Storage
-  5 Users Allowed
-  Send up to 10 GB
-  Learn More
-
-  Master
-  &dollar;39.99
-  &dollar;399.99
-  2 TB Storage
-  10 Users Allowed
-  Send up to 20 GB
-  Learn More
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+    <script src="scripts/app.js"></script>
   </body>
 </html>

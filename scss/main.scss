@@ -40,7 +40,7 @@ main {
 
 header {
   justify-content: center;
-  padding: 3rem 0;
+  padding: 3rem 0 4.5rem;
   .title {
     display: inherit;
     justify-items: center;
@@ -58,11 +58,17 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  & > h3 {
+    font-size: 1.1em;
+    color: $NeutralLightGrayishBlue;
+  }
+
   .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin: 0 2rem;
 
     input {
       opacity: 0;
@@ -129,6 +135,36 @@ header {
     box-shadow: 0 5px 5px 2px #e7e8f5;
     padding: 2rem 2rem;
 
+    &:nth-child(2) {
+      background: $PrimaryLinearGradient;
+
+      .pricing__container {
+        .heading {
+          color: #fff;
+        }
+
+        .price {
+          color: #fff;
+        }
+
+        .descriptions {
+          li {
+            color: #fff;
+          }
+        }
+      }
+
+      .btn {
+        @include buttonStyle(
+          #fff,
+          hsl(236, 72%, 79%),
+          transparent,
+          $NeutralLightGrayishBlue,
+          #fff
+        );
+      }
+    }
+
     &--btn {
       display: grid;
       width: 100%;
@@ -139,8 +175,8 @@ header {
           $PrimaryLinearGradient,
           $NeutralVeryLightGrayishBlue,
           transparent,
-          $NeutralDarkGrayishBlue,
-          $PrimaryLinearGradient
+          $NeutralLightGrayishBlue,
+          $NeutralGrayishBlue
         );
       }
     }
@@ -171,8 +207,9 @@ header {
         }
       }
 
-      .annual-price {
+      .hide {
         display: none;
+        transition: display 3s ease-out;
       }
     }
 
