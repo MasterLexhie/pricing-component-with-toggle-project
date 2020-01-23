@@ -9,6 +9,8 @@ body,
   padding: 0;
   font-family: $FontFamily;
   font-size: $FontSize;
+  word-break: break-word;
+  transition: all 1s ease-in-out;
 }
 
 .grid {
@@ -21,7 +23,7 @@ body,
 
 .container {
   max-width: 1440px;
-  min-width: 100%;
+  width: 100%;
   padding: 0 2em;
   margin: 0 auto;
 }
@@ -34,13 +36,14 @@ ul {
 
 main {
   background: $NeutralVeryLightGrayishBlue;
+  min-height: 100vh;
 }
 
 // * HEADER *
 
 header {
   justify-content: center;
-  padding: 3rem 0 4.5rem;
+  padding: 3rem 2rem 4.5rem;
   .title {
     display: inherit;
     justify-items: center;
@@ -48,27 +51,38 @@ header {
     h1 {
       font-size: 2em;
       color: $NeutralGrayishBlue;
+      text-align: center;
     }
   }
 }
 
 // * SECTION *
+
 .pricing-toggle {
   padding-top: 2.6rem;
   align-items: center;
   justify-content: space-between;
 
   & > h3 {
-    font-size: 1.1em;
+    font-size: 1em;
     color: $NeutralLightGrayishBlue;
+
+    @media (min-width: 760px) {
+      font-size: 1.1em;
+    }
   }
 
   .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
-    margin: 0 2rem;
+    width: 51px;
+    height: 30px;
+    margin: 0 1.3rem;
+
+    @media (min-width: 600px) {
+      width: 60px;
+      height: 34px;
+    }
 
     input {
       opacity: 0;
@@ -79,9 +93,13 @@ header {
         background: $PrimaryLinearGradient;
 
         &::before {
-          -webkit-transform: translateX(26px);
-          -ms-transform: translateX(26px);
-          transform: translateX(26px);
+          -webkit-transform: translateX(20px);
+          -ms-transform: translateX(20px);
+          transform: translateX(20px);
+
+          @media (min-width: 600px) {
+            transform: translateX(26px);
+          }
         }
       }
 
@@ -105,14 +123,19 @@ header {
       &:before {
         position: absolute;
         content: "";
-        height: 26px;
-        width: 26px;
+        height: 22px;
+        width: 22px;
         left: 4px;
         bottom: 4px;
         background-color: white;
         border-radius: 50px;
         -webkit-transition: 0.4s;
         transition: 0.4s;
+
+        @media (min-width: 600px) {
+          height: 26px;
+          width: 26px;
+        }
       }
 
       .round {
@@ -127,17 +150,31 @@ header {
 }
 
 .pricing {
-  grid-gap: 3rem 1rem;
+  grid-gap: 3rem 0rem;
   padding: 1rem 2rem 3rem;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  }
 
   &__card {
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 5px 5px 2px #e7e8f5;
     padding: 2rem 2rem;
+    max-width: 345px;
+
+    @media (min-width: 1024px) {
+      max-width: unset;
+    }
 
     &:nth-child(2) {
       background: $PrimaryLinearGradient;
+
+      @media (min-width: 1024px) {
+        transform: scaleY(1.08);
+      }
 
       .pricing__container {
         .heading {
@@ -198,8 +235,16 @@ header {
       padding-bottom: 1.4rem;
 
       &-value {
-        font-size: 4.3em;
+        font-size: 2.7em;
         align-items: center;
+
+        @media (min-width: 330px) {
+          font-size: 3.5em;
+        }
+
+        @media (min-width: 1100px) {
+          font-size: 4.3em;
+        }
 
         .currency-symbol {
           font-size: 2.7rem;
