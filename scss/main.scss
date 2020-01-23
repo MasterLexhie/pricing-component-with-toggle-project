@@ -158,6 +158,11 @@ header {
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
   }
 
+  @media screen and (min-width: 900px) {
+    padding: 1rem 7rem 3rem;
+    grid-auto-flow: column;
+  }
+
   &__card {
     background: #fff;
     border-radius: 7px;
