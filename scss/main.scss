@@ -10,7 +10,7 @@ body,
   font-family: $FontFamily;
   font-size: $FontSize;
   word-break: break-word;
-  transition: all 1s ease-in-out;
+  transition: font 1s ease-in-out;
 }
 
 .grid {
@@ -37,6 +37,30 @@ ul {
 main {
   background: $NeutralVeryLightGrayishBlue;
   min-height: 100vh;
+}
+
+.bg-top {
+  position: absolute;
+  top: -20px;
+  left: 76%;
+  // overflow-x: hidden;
+
+  @media (min-width: 900px) {
+    top: 0;
+    right: 0;
+    left: unset;
+  }
+}
+
+.bg-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+
+  @media (min-width: 900px) {
+    display: unset;
+  }
 }
 
 // * HEADER *
@@ -151,16 +175,17 @@ header {
 
 .pricing {
   grid-gap: 3rem 0rem;
-  padding: 1rem 2rem 3rem;
-  justify-content: center;
+  padding: 1rem 0rem 3rem;
+  position: relative;
+
+  @media screen and (min-width: 900px) {
+    max-width: 95%;
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
-  }
-
-  @media screen and (min-width: 900px) {
-    padding: 1rem 7rem 3rem;
-    grid-auto-flow: column;
   }
 
   &__card {
@@ -168,7 +193,6 @@ header {
     border-radius: 7px;
     box-shadow: 0 5px 5px 2px #e7e8f5;
     padding: 2rem 2rem;
-    max-width: 345px;
 
     @media (min-width: 1024px) {
       max-width: unset;
@@ -177,7 +201,7 @@ header {
     &:nth-child(2) {
       background: $PrimaryLinearGradient;
 
-      @media (min-width: 1024px) {
+      @media (min-width: 900px) {
         transform: scaleY(1.08);
       }
 
